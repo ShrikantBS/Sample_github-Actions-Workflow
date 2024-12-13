@@ -12,3 +12,5 @@ jobs:
     steps:
       - name: "Prints Hello World!"
         run: echo "Hello World!!"
+      - name: "Prints This is just another addition!"
+        run: echo "This is just another addition V1!!"
