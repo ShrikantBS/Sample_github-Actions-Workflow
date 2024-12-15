@@ -32,7 +32,7 @@ jobs:
       - name: "Prints current date"
         run: date
   on-workflow-dispatch:
-    if: github.event_name == 'workflow-dispatch'
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - name: "Prints Hello World!"
