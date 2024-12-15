@@ -7,9 +7,9 @@ on:
         - test
   pull_request:
     branches:
-        - master    
+        - master
   workflow_dispatch:
-          
+
 jobs:
   on-push:
     if: github.event_name == 'push'
@@ -18,7 +18,7 @@ jobs:
       - name: "Prints Hello World!"
         run: echo "Hello World!!"
       - name: "Prints This is just another addition!"
-        run: echo "This is just another addition V1!!"
+        run: echo "This is a push request!!"
       - name: "Prints current date"
         run: date
   on-pull-request:
@@ -28,6 +28,16 @@ jobs:
       - name: "Prints Hello World!"
         run: echo "Hello World!!"
       - name: "Prints This is just another addition!"
-        run: echo "This is just another addition V1!!"
+        run: echo "This is a pll request!!"
+      - name: "Prints current date"
+        run: date
+  on-workflow-dispatch:
+    if: github.event_name == 'workflow-dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Prints Hello World!"
+        run: echo "Hello World!!"
+      - name: "Prints This is just another addition!"
+        run: echo "This is Workflow Dispatch!!"
       - name: "Prints current date"
         run: date
