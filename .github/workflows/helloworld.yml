@@ -4,9 +4,25 @@ on:
   push:
     branches:
         - master
-
+        - test
+  pull_request:
+    branches:
+        - master    
+  workflow_dispatch:
+          
 jobs:
-  hello_world:
+  on-push:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Prints Hello World!"
+        run: echo "Hello World!!"
+      - name: "Prints This is just another addition!"
+        run: echo "This is just another addition V1!!"
+      - name: "Prints current date"
+        run: date
+  on-pull-request:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: "Prints Hello World!"
